@@ -62,6 +62,7 @@ jobs:
         --version $(cat /home/runner/work/AWSSamExample/AWSSamExample/version.txt)
         --include s3bucket.yaml
         --include template.yaml
+        --include template_local_path.yaml
         --format zip
     - name: Push to Octopus
       run: >-
