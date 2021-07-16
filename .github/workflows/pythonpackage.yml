@@ -17,7 +17,7 @@ jobs:
     - name: Store GitVersion
       run: |
         echo "FullSemVer: ${{ steps.gitversion.outputs.fullSemVer }}"
-        echo "${{ steps.gitversion.outputs.fullSemVer }} > /github/workspace/version.txt
+        echo "${{ steps.gitversion.outputs.fullSemVer }}" > /github/workspace/version.txt
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
