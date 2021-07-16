@@ -13,11 +13,12 @@ jobs:
       with:
         versionSpec: '5.x'
     - name: Determine Version
+      id:   gitversion
       uses: gittools/actions/gitversion/execute@v0.9.7
     - name: Store GitVersion
       run: |
         echo "FullSemVer: ${{ steps.gitversion.outputs.fullSemVer }}"
-        echo "${{ steps.gitversion.outputs.fullSemVer }}" > /github/workspace/version.txt
+        echo "${{ steps.gitversion.outputs.fullSemVer }}" > version.txt
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
