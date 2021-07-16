@@ -52,7 +52,7 @@ jobs:
         --apiKey ${{ secrets.SAMPLES_API_KEY }}
         --package /home/runner/work/AWSSamExample/AWSSamExample/AwsSamLambda.$(cat /home/runner/work/AWSSamExample/AWSSamExample/version.txt).zip
         --overwrite-mode IgnoreIfExists
-        --space Target - Serverless
+        --space "Target - Serverless"
     - name: Pack Templates
       run: >-
         /opt/octo/Octo pack
@@ -70,4 +70,4 @@ jobs:
         --apiKey ${{ secrets.SAMPLES_API_KEY }}
         --package /home/runner/work/AWSSamExample/AWSSamExample/AwsSamLambdaTemplates.$(cat /home/runner/work/AWSSamExample/AWSSamExample/version.txt).zip
         --overwrite-mode IgnoreIfExists
-        --space Target - Serverless
+        --space "Target - Serverless"
