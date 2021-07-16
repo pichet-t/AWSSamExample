@@ -8,7 +8,7 @@ jobs:
     - name: Get Git Version
       uses: docker://gittools/gitversion:5.5.1-linux-fedora.30-x64-netcoreapp2.1
       with:
-        args: /github/workspace /nofetch /exec /bin/sh /execargs "-c \"echo $GitVersion_FullSemVer > /github/workspace/version.txt\""
+        args: /github/workspace /nofetch -exec /bin/sh -execargs "-c \"echo $GitVersion_FullSemVer > /github/workspace/version.txt\""
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
