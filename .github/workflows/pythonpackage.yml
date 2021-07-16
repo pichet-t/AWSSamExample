@@ -38,11 +38,11 @@ jobs:
     - name: Push to Octopus
       run: >-
         /opt/octo/Octo push
-        --server ${{ secrets.MATTC_URL }}
-        --apiKey ${{ secrets.MATTC_API_KEY }}
+        --server ${{ secrets.SAMPLES_URL }}
+        --apiKey ${{ secrets.SAMPLES_API_KEY }}
         --package /home/runner/work/AWSSamExample/AWSSamExample/AwsSamLambda.$(cat /home/runner/work/AWSSamExample/AWSSamExample/version.txt).zip
         --overwrite-mode IgnoreIfExists
-        --space Lambda
+        --space Target - Serverless
     - name: Pack Templates
       run: >-
         /opt/octo/Octo pack
@@ -56,8 +56,8 @@ jobs:
     - name: Push to Octopus
       run: >-
         /opt/octo/Octo push
-        --server ${{ secrets.MATTC_URL }}
-        --apiKey ${{ secrets.MATTC_API_KEY }}
+        --server ${{ secrets.SAMPLES_URL }}
+        --apiKey ${{ secrets.SAMPLES_API_KEY }}
         --package /home/runner/work/AWSSamExample/AWSSamExample/AwsSamLambdaTemplates.$(cat /home/runner/work/AWSSamExample/AWSSamExample/version.txt).zip
         --overwrite-mode IgnoreIfExists
-        --space Lambda
+        --space Target - Serverless
