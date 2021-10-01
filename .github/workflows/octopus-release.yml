@@ -4,14 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-  - uses: actions/checkout@v2
-  - name: Install Octopus CLI
-    uses: OctopusDeploy/install-octopus-cli-action@1.1.7
-    with:
-      version: latest
-  - name: Create a release in Octopus Deploy
-    uses: OctopusDeploy/create-release-action@1.1.1
-    with:
-      api_key: ${{ secrets.SAMPLES_API_KEY }}
-      project: 'octopusdeploy-ecs'
-      server: ${{ secrets.SAMPLES_URL }}
+    - uses: actions/checkout@v2
+    - name: Install Octopus CLI
+      uses: OctopusDeploy/install-octopus-cli-action@1.1.7
+      with:
+        version: latest
+    - name: Create a release in Octopus Deploy
+      uses: OctopusDeploy/create-release-action@1.1.1
+      with:
+        api_key: ${{ secrets.SAMPLES_API_KEY }}
+        project: 'octopusdeploy-ecs'
+        server: ${{ secrets.SAMPLES_URL }}
