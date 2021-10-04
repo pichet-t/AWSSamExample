@@ -13,5 +13,5 @@ jobs:
       uses: OctopusDeploy/create-release-action@v1.1.1
       with:
         api_key: ${{ secrets.SAMPLES_API_KEY }}
-        project: 'octopusdeploy-ecs'
+        project: 'Ops self-service'
         server: ${{ secrets.SAMPLES_URL }}
