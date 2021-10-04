@@ -1,0 +1,20 @@
+name: Octopus Runbook
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Octopus CLI
+      uses: OctopusDeploy/install-octopus-cli-action@v1.1.7
+      with:
+        version: latest
+    - name: Run a runbook in Octopus Deploy
+      uses: OctopusDeploy/run-runbook-action@v1.0.1
+      with:
+        api_key: ${{ secrets.SAMPLES_API_KEY }}
+        project: 'Ops self-service'
+        server: ${{ secrets.SAMPLES_URL }}
+        environments: '1Edge'
+        runbook: 'GitHub Deployment Runbook'
+        show_progress: 'true'
