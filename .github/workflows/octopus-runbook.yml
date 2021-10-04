@@ -15,6 +15,6 @@ jobs:
         api_key: ${{ secrets.SAMPLES_API_KEY }}
         project: 'Ops self-service'
         server: ${{ secrets.SAMPLES_URL }}
-        environments: '1Edge'
+        environments: '2Staging'
         runbook: 'GitHub Deployment Runbook'
         show_progress: 'true'
